@@ -226,4 +226,54 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Contact Form Inquiry Chips Interaction
+   */
+  document.querySelectorAll('.inquiry-chip').forEach(chip => {
+    chip.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelectorAll('.inquiry-chip').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      const subjectInput = document.querySelector('#contactSubjectInput');
+      if (subjectInput && this.dataset.subject) {
+        subjectInput.value = this.dataset.subject;
+      }
+    });
+  });
+
+  /**
+   * Services Category Filtering
+   */
+  const serviceFilterBtns = document.querySelectorAll('.service-filter-btn');
+  const serviceCards = document.querySelectorAll('.service-card-wrapper');
+
+  if (serviceFilterBtns.length > 0 && serviceCards.length > 0) {
+    serviceFilterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        serviceFilterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.dataset.filter;
+
+        serviceCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('service-hidden');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 50);
+          } else {
+            card.classList.add('service-hidden');
+          }
+        });
+
+        // Trigger AOS refresh so layout updates smoothly
+        if (typeof AOS !== 'undefined') {
+          AOS.refresh();
+        }
+      });
+    });
+  }
+
 })();

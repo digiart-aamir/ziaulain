@@ -9,26 +9,64 @@ require_once __DIR__ . '/config.php';
 // Profile Information
 $profile = [
     'name' => 'Sidra Zia',
-    'title' => 'Data Analyst & Web Developer',
-    'tagline' => 'I am an Information Technology professional specializing in full-stack web development, data analysis, and applied machine learning solutions.',
-    'typed_items' => 'Web Developer, Data Analyst, IT Trainer, Machine Learning Specialist, UI Designer',
+    'title' => 'Full-Stack Web Developer',
+    'tagline' => 'Crafting high-performance, responsive web applications and seamless digital experiences with clean code and modern architecture.',
+    'typed_items' => 'Full-Stack Web Developer, Modern UI/UX Designer, PHP & MySQL Developer, Responsive Web Engineer, Web Performance Specialist',
     'birthday' => '25 Aug 2000',
     'age' => 24,
     'degree' => 'Bachelor in Information Technology',
     'university' => 'Mirpur University of Science and Technology (MUST)',
     'phone' => '+923115912874',
     'email' => 'zziaulain@gmail.com',
-    'city' => 'Islamabad, B-17, Pakistan',
-    'freelance' => 'Available',
+    'city' => 'Islamabad',
+    'freelance' => 'Available for Projects',
     'profile_image' => 'assets/img/profile-img.jpg',
     'hero_image' => 'assets/img/hero-bg.jpg',
-    'about_text' => 'I am Sidra Zia, a graduate of the Mirpur University of Science and Technology (MUST) with a degree in Information Technology. With a strong foundation in modern IT paradigms, I have developed a diverse skill set spanning full-stack web development, data analysis, machine learning model development, and technical training. I am passionate about engineering clean digital solutions and transforming complex data into actionable business intelligence.',
+    'about_text' => 'I am Sidra Zia, an Information Technology graduate from Mirpur University of Science and Technology (MUST) whose primary career is Full-Stack Web Development alongside technical Web & IT Training. I bridge the gap between creative, responsive user interfaces and robust backend architectures — building accessible web applications with clean code in PHP, MySQL, JavaScript, and modern CSS3. Concurrently, as a dedicated Web & IT Trainer, I mentor students and professionals in coding fundamentals and modern digital development.',
+    'about_metrics' => [
+        ['icon' => 'bi bi-mortarboard-fill', 'label' => 'Degree', 'value' => 'BS Information Technology (MUST)'],
+        ['icon' => 'bi bi-code-slash', 'label' => 'Primary Stack', 'value' => 'PHP, MySQL, Modern JS, Bootstrap'],
+        ['icon' => 'bi bi-clock-history', 'label' => 'Experience', 'value' => '3+ Years Web & IT Training'],
+        ['icon' => 'bi bi-kanban-fill', 'label' => 'Completed Projects', 'value' => '25+ Web & Data Apps'],
+        ['icon' => 'bi bi-geo-alt-fill', 'label' => 'Location', 'value' => 'Islamabad'],
+        ['icon' => 'bi bi-envelope-check-fill', 'label' => 'Email', 'value' => 'zziaulain@gmail.com', 'is_link' => 'mailto:zziaulain@gmail.com'],
+        ['icon' => 'bi bi-telephone-fill', 'label' => 'Phone', 'value' => '+923115912874', 'is_link' => 'tel:+923115912874'],
+        ['icon' => 'bi bi-patch-check-fill', 'label' => 'Availability', 'value' => 'Available for Projects & Training', 'badge' => 'badge-available']
+    ],
     'socials' => [
         'github' => ['url' => SITE_GITHUB, 'icon' => 'bi bi-github', 'label' => 'GitHub'],
         'linkedin' => ['url' => SITE_LINKEDIN, 'icon' => 'bi bi-linkedin', 'label' => 'LinkedIn'],
         'facebook' => ['url' => SITE_FACEBOOK, 'icon' => 'bi bi-facebook', 'label' => 'Facebook'],
         'instagram' => ['url' => SITE_INSTAGRAM, 'icon' => 'bi bi-instagram', 'label' => 'Instagram'],
         'skype' => ['url' => SITE_SKYPE, 'icon' => 'bi bi-skype', 'label' => 'Skype']
+    ]
+];
+
+// About Highlight Pillars (Web & Training Focus)
+$about_pillars = [
+    [
+        'icon' => 'bi bi-window-fullscreen',
+        'title' => 'Modern UI/UX & Frontend',
+        'desc' => 'Crafting responsive, mobile-first interfaces with clean semantic HTML5, modern CSS3, and dynamic JavaScript for seamless user interaction.',
+        'color' => 'pillar-blue'
+    ],
+    [
+        'icon' => 'bi bi-server',
+        'title' => 'Backend & Relational DBs',
+        'desc' => 'Engineering structured server-side workflows, modular PHP applications, and secure MySQL relational databases with optimized queries.',
+        'color' => 'pillar-cyan'
+    ],
+    [
+        'icon' => 'bi bi-mortarboard-fill',
+        'title' => 'Web & IT Technical Trainer',
+        'desc' => 'Delivering hands-on training, practical mentorship, and curriculum instruction in web technologies, programming fundamentals, and IT tools.',
+        'color' => 'pillar-emerald'
+    ],
+    [
+        'icon' => 'bi bi-speedometer2',
+        'title' => 'Performance, SEO & Security',
+        'desc' => 'Adhering to modern web standards, lightweight asset delivery, cross-browser compatibility, and search-engine visibility.',
+        'color' => 'pillar-purple'
     ]
 ];
 
@@ -113,14 +151,140 @@ $experience = [
 
 // Services Catalog
 $services = [
+    'web-development' => [
+        'slug' => 'web-development',
+        'title' => 'Full-Stack Web Development',
+        'badge' => 'Core Specialization',
+        'badge_class' => 'badge-service-primary',
+        'category' => 'web',
+        'icon' => 'bi bi-code-slash',
+        'color' => 'item-teal',
+        'image' => 'assets/img/website.png',
+        'short_desc' => 'High-performance responsive websites, client portals, and dynamic web applications built with clean semantic code, modular backends, and scalable database integration.',
+        'full_desc' => 'We create performant, responsive, and modern websites tailored to your unique requirements. Combining sleek frontends with robust, secure PHP backend architectures, your digital presence will be fast, secure, and easily manageable.',
+        'highlights' => [
+            'Mobile-first responsive frontend UI (HTML5, CSS3, modern JavaScript, Bootstrap 5)',
+            'Secure modular PHP 8 backend architecture & RESTful API endpoints',
+            'MySQL database modeling, speed auditing, and cross-browser QA'
+        ],
+        'tech_tags' => ['PHP 8', 'JavaScript', 'MySQL', 'Bootstrap 5', 'REST APIs', 'CSS3'],
+        'steps' => [
+            'Architecture & Wireframing: Planning site structure, component hierarchies, and responsive layouts.',
+            'Frontend Engineering: Crafting semantic HTML5, CSS3, modern JavaScript, and mobile-first Bootstrap styles.',
+            'Backend Implementation: Developing modular, secure PHP scripts, request handlers, and database integrations.',
+            'Speed & SEO Optimization: Image compression, clean URLs, semantic markup, and cross-browser testing.'
+        ],
+        'technologies' => [
+            'Frontend' => ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5'],
+            'Backend' => ['PHP 8', 'RESTful APIs', 'WordPress'],
+            'Database' => ['MySQL', 'MySQLi'],
+            'Tools' => ['Git', 'VS Code', 'Apache']
+        ]
+    ],
+    'consulting-training' => [
+        'slug' => 'consulting-training',
+        'title' => 'Web & IT Technical Training',
+        'badge' => 'Instruction & Mentorship',
+        'badge_class' => 'badge-service-success',
+        'category' => 'training',
+        'icon' => 'bi bi-mortarboard-fill',
+        'color' => 'item-red',
+        'image' => 'assets/img/masonry-portfolio/consulting.jpeg',
+        'short_desc' => 'Structured computer science coaching, web engineering bootcamps, and personalized technical mentorship designed for students, educators, and emerging developers.',
+        'full_desc' => 'Empower yourself or your technical team with structured, hands-on training. We offer tailored guidance on software development best practices, data workflows, coding fundamentals, and practical project reviews.',
+        'highlights' => [
+            'Zero-to-advanced curriculum covering web fundamentals, OOP, and database design',
+            'Live coding workshops, hands-on programming labs, and code debugging reviews',
+            'Capstone project guidance, portfolio building, and technical interview preparation'
+        ],
+        'tech_tags' => ['Web Fundamentals', 'Python Labs', 'Code Reviews', '1-on-1 Mentorship', 'OOP'],
+        'steps' => [
+            'Skill Assessment: Evaluating current capabilities and identifying exact learning objectives.',
+            'Curriculum Design: Structuring step-by-step practical modules with real-world coding exercises.',
+            'Interactive Sessions: One-on-one mentorship, interactive Zoom classrooms, or on-site workshops.',
+            'Project Review & Certification: Guiding final capstone projects and conducting code quality audits.'
+        ],
+        'technologies' => [
+            'Delivery Modes' => ['Zoom Online Classes', 'One-on-One Mentoring', 'Team Workshops'],
+            'Subjects' => ['Python Programming', 'Web Fundamentals', 'Data Analytics', 'Database Design']
+        ]
+    ],
+    'database-management' => [
+        'slug' => 'database-management',
+        'title' => 'Database Architecture & Design',
+        'badge' => 'Data Modeling',
+        'badge_class' => 'badge-service-purple',
+        'category' => 'database',
+        'icon' => 'bi bi-database-fill-gear',
+        'color' => 'item-indigo',
+        'image' => 'assets/img/masonry-portfolio/database.png',
+        'short_desc' => 'Robust relational schema modeling, 3NF normalization, high-performance indexing, query profiling, and automated database backup configurations.',
+        'full_desc' => 'A robust application requires a well-structured database foundation. We design clean relational schemas, enforce referential integrity, eliminate duplicate records, and optimize SQL queries for blazing-fast response times.',
+        'highlights' => [
+            'Relational schema design (3NF) with referential integrity & ACID compliance',
+            'Complex query profiling, composite indexing, and execution time optimization',
+            'Automated scheduled SQL backups and disaster recovery verification'
+        ],
+        'tech_tags' => ['MySQL', 'MariaDB', 'Schema 3NF', 'Indexing', 'Query Optimization', 'phpMyAdmin'],
+        'steps' => [
+            'Entity-Relationship Modeling: Mapping business entities and relationships into normalized tables (3NF).',
+            'Schema Setup & Constraints: Defining keys, indexes, foreign key cascades, and check constraints.',
+            'Query Optimization: Profiling slow queries, adding targeted composite indexes, and streamlining joins.',
+            'Backup & Disaster Recovery: Automated scheduled SQL backups and data export verification.'
+        ],
+        'technologies' => [
+            'Engines' => ['MySQL', 'MariaDB'],
+            'Concepts' => ['Relational Normalization', 'ACID Transactions', 'Indexing Strategies'],
+            'Administration' => ['phpMyAdmin', 'SQL Command Line']
+        ]
+    ],
+    'data-analysis' => [
+        'slug' => 'data-analysis',
+        'title' => 'Data Analytics & Dashboards',
+        'badge' => 'Business Intelligence',
+        'badge_class' => 'badge-service-warning',
+        'category' => 'data',
+        'icon' => 'bi bi-bar-chart-line-fill',
+        'color' => 'item-orange',
+        'image' => 'assets/img/masonry-portfolio/masonry-portfolio-6.png',
+        'short_desc' => 'Transforming raw transactional and operational datasets into clear, actionable visual dashboards, KPI monitors, and executive summaries.',
+        'full_desc' => 'Raw data holds immense value when processed correctly. We transform raw tabular, transactional, and time-series data into clear visual stories and interactive dashboards, empowering stakeholders to make evidence-based decisions.',
+        'highlights' => [
+            'Data cleaning, transformation, and automated exploratory data analysis (EDA)',
+            'Interactive charts, correlation matrices, and distribution visualizations',
+            'Translating statistical metrics into actionable business intelligence reports'
+        ],
+        'tech_tags' => ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Excel BI'],
+        'steps' => [
+            'Data Auditing & Cleaning: Removing duplicates, standardizing data formats, and handling null values.',
+            'Exploratory Data Analysis (EDA): Uncovering statistical correlations, anomalies, and underlying trends.',
+            'Visual Storytelling: Building clear bar charts, heatmaps, scatter plots, and distribution diagrams.',
+            'Executive Reporting: Translating complex analytical findings into executive-ready summaries.'
+        ],
+        'technologies' => [
+            'Programming' => ['Python', 'SQL'],
+            'Libraries' => ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
+            'BI & Office' => ['Tableau', 'Microsoft Excel'],
+            'Databases' => ['MySQL', 'Relational DBs']
+        ]
+    ],
     'machine-learning' => [
         'slug' => 'machine-learning',
-        'title' => 'Machine Learning Model Development',
-        'icon' => 'bi bi-lightbulb',
+        'title' => 'Machine Learning & AI Modeling',
+        'badge' => 'Predictive Intelligence',
+        'badge_class' => 'badge-service-info',
+        'category' => 'data',
+        'icon' => 'bi bi-cpu-fill',
         'color' => 'item-cyan',
         'image' => 'assets/img/service 1.png',
-        'short_desc' => 'Custom machine learning models tailored to your specific business requirements, spanning classification, regression, clustering, and natural language processing.',
+        'short_desc' => 'Custom machine learning models and predictive algorithms engineered for classification, regression, clustering, and intelligent workflow automation.',
         'full_desc' => 'We design and develop end-to-end machine learning pipelines tailored to your operational needs. From data cleaning and feature engineering to model training, hyperparameter optimization, and deployment, we ensure accuracy and reliable inference.',
+        'highlights' => [
+            'Supervised & unsupervised predictive modeling with Scikit-Learn',
+            'Feature engineering, cross-validation, and precision/recall optimization',
+            'Deployable model APIs for continuous integration into web applications'
+        ],
+        'tech_tags' => ['Scikit-Learn', 'Python', 'Jupyter', 'Algorithms', 'Evaluation', 'APIs'],
         'steps' => [
             'Requirement Analysis: Defining problem statement, metrics (Accuracy, F1-score, RMSE), and target outputs.',
             'Data Collection & Preparation: Aggregating diverse datasets, handling missing values, scaling, and outlier removal.',
@@ -137,95 +301,23 @@ $services = [
             'Environment' => ['Jupyter Notebooks', 'Git', 'Anaconda']
         ]
     ],
-    'data-analysis' => [
-        'slug' => 'data-analysis',
-        'title' => 'Data Analysis and Visualization',
-        'icon' => 'bi bi-bar-chart',
-        'color' => 'item-orange',
-        'image' => 'assets/img/masonry-portfolio/masonry-portfolio-6.png',
-        'short_desc' => 'Comprehensive data analysis services including data cleaning, exploratory data analysis (EDA), and interactive visual charts to unlock actionable insights.',
-        'full_desc' => 'Raw data holds immense value when processed correctly. We transform raw tabular, transactional, and time-series data into clear visual stories and interactive dashboards, empowering stakeholders to make evidence-based decisions.',
-        'steps' => [
-            'Data Auditing & Cleaning: Removing duplicates, standardizing data formats, and handling null values.',
-            'Exploratory Data Analysis (EDA): Uncovering statistical correlations, anomalies, and underlying trends.',
-            'Visual Storytelling: Building clear bar charts, heatmaps, scatter plots, and distribution diagrams.',
-            'Executive Reporting: Translating complex analytical findings into executive-ready summaries.'
-        ],
-        'technologies' => [
-            'Programming' => ['Python', 'SQL'],
-            'Libraries' => ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
-            'BI & Office' => ['Tableau', 'Microsoft Excel'],
-            'Databases' => ['MySQL', 'Relational DBs']
-        ]
-    ],
-    'web-development' => [
-        'slug' => 'web-development',
-        'title' => 'Full-Stack Web Development',
-        'icon' => 'bi bi-code-slash',
-        'color' => 'item-teal',
-        'image' => 'assets/img/website.png',
-        'short_desc' => 'Full-stack web development services delivering fast, responsive, and dynamic websites tailored to your brand, clients, and operational goals.',
-        'full_desc' => 'We create performant, responsive, and modern websites tailored to your unique requirements. Combining sleek frontends with robust, secure PHP backend architectures, your digital presence will be fast, secure, and easily manageable.',
-        'steps' => [
-            'Architecture & Wireframing: Planning site structure, component hierarchies, and responsive layouts.',
-            'Frontend Engineering: Crafting semantic HTML5, CSS3, modern JavaScript, and mobile-first Bootstrap styles.',
-            'Backend Implementation: Developing modular, secure PHP scripts, request handlers, and database integrations.',
-            'Speed & SEO Optimization: Image compression, clean URLs, semantic markup, and cross-browser testing.'
-        ],
-        'technologies' => [
-            'Frontend' => ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5'],
-            'Backend' => ['PHP 8', 'RESTful APIs', 'WordPress'],
-            'Database' => ['MySQL', 'MySQLi'],
-            'Tools' => ['Git', 'VS Code', 'Apache']
-        ]
-    ],
-    'consulting-training' => [
-        'slug' => 'consulting-training',
-        'title' => 'Consulting and Training',
-        'icon' => 'bi bi-person-video3',
-        'color' => 'item-red',
-        'image' => 'assets/img/masonry-portfolio/consulting.jpeg',
-        'short_desc' => 'Expert IT consulting and personalized training sessions in programming, web development, and data analytics for individuals and organizations.',
-        'full_desc' => 'Empower yourself or your technical team with structured, hands-on training. We offer tailored guidance on software development best practices, data workflows, coding fundamentals, and practical project reviews.',
-        'steps' => [
-            'Skill Assessment: Evaluating current capabilities and identifying exact learning objectives.',
-            'Curriculum Design: Structuring step-by-step practical modules with real-world coding exercises.',
-            'Interactive Sessions: One-on-one mentorship, interactive Zoom classrooms, or on-site workshops.',
-            'Project Review & Certification: Guiding final capstone projects and conducting code quality audits.'
-        ],
-        'technologies' => [
-            'Delivery Modes' => ['Zoom Online Classes', 'One-on-One Mentoring', 'Team Workshops'],
-            'Subjects' => ['Python Programming', 'Web Fundamentals', 'Data Analytics', 'Database Design']
-        ]
-    ],
-    'database-management' => [
-        'slug' => 'database-management',
-        'title' => 'Database Design & Management',
-        'icon' => 'bi bi-database',
-        'color' => 'item-indigo',
-        'image' => 'assets/img/masonry-portfolio/database.png',
-        'short_desc' => 'Comprehensive database architecture, relational schema normalization, query optimization, indexing, and backup security solutions.',
-        'full_desc' => 'A robust application requires a well-structured database foundation. We design clean relational schemas, enforce referential integrity, eliminate duplicate records, and optimize SQL queries for blazing-fast response times.',
-        'steps' => [
-            'Entity-Relationship Modeling: Mapping business entities and relationships into normalized tables (3NF).',
-            'Schema Setup & Constraints: Defining keys, indexes, foreign key cascades, and check constraints.',
-            'Query Optimization: Profiling slow queries, adding targeted composite indexes, and streamlining joins.',
-            'Backup & Disaster Recovery: Automated scheduled SQL backups and data export verification.'
-        ],
-        'technologies' => [
-            'Engines' => ['MySQL', 'MariaDB'],
-            'Concepts' => ['Relational Normalization', 'ACID Transactions', 'Indexing Strategies'],
-            'Administration' => ['phpMyAdmin', 'SQL Command Line']
-        ]
-    ],
     'digital-marketing' => [
         'slug' => 'digital-marketing',
-        'title' => 'Digital Marketing and SEO',
-        'icon' => 'bi bi-share',
+        'title' => 'Web Performance & Technical SEO',
+        'badge' => 'Optimization & Security',
+        'badge_class' => 'badge-service-rose',
+        'category' => 'web',
+        'icon' => 'bi bi-shield-check',
         'color' => 'item-pink',
         'image' => 'assets/img/masonry-portfolio/marketing.jpg',
-        'short_desc' => 'Strategic digital marketing, Search Engine Optimization (SEO), content marketing, and brand visibility tactics designed to drive targeted traffic.',
+        'short_desc' => 'Core Web Vitals performance acceleration, technical on-page SEO, OpenGraph data modeling, and web security audit hardening.',
         'full_desc' => 'Building a great website is only half the battle; ensuring your target audience finds it is equally vital. We implement technical on-page SEO, optimized meta tags, structured OpenGraph data, and content distribution plans to amplify your reach.',
+        'highlights' => [
+            'Core Web Vitals optimization, asset caching, and image compression audits',
+            'Technical on-page SEO, semantic HTML5 hierarchy, and XML sitemaps',
+            'Front-facing security audits, CSRF/XSS defenses, and input sanitization'
+        ],
+        'tech_tags' => ['Technical SEO', 'Core Web Vitals', 'PageSpeed', 'Security Hardening', 'Schema.org'],
         'steps' => [
             'Technical SEO Audit: Optimizing page speed, mobile friendliness, meta titles, descriptions, and sitemaps.',
             'Content Marketing Strategy: Crafting targeted blog topics and service descriptions that answer search queries.',
