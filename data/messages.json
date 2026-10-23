@@ -1,0 +1,20 @@
+[
+    {
+        "id": "msg_6ada6a2e4a64b3.17097528",
+        "name": "John Doe",
+        "email": "john@example.com",
+        "subject": "Website Redesign",
+        "message": "Hello, I want to redesign my company website with PHP and Bootstrap.",
+        "ip": "127.0.0.1",
+        "created_at": "2026-10-22 21:55:26"
+    },
+    {
+        "id": "msg_6ada69d4bb1195.01986137",
+        "name": "John Doe",
+        "email": "john@example.com",
+        "subject": "Website Redesign",
+        "message": "Hello, I want to redesign my company website with PHP and Bootstrap.",
+        "ip": "127.0.0.1",
+        "created_at": "2026-10-22 21:53:56"
+    }
+]

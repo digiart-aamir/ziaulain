@@ -1,0 +1,5 @@
+# Deny direct access to stored data files
+<Files "*">
+    Order Deny,Allow
+    Deny from all
+</Files>
