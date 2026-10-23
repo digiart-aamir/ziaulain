@@ -243,61 +243,81 @@ require_once __DIR__ . '/includes/navbar.php';
     <!-- Skills Section -->
     <section id="skills" class="skills section light-background">
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>A comprehensive overview of my core competencies across frontend, backend, database engineering, and machine learning.</p>
+      <div class="container section-title pb-2" data-aos="fade-up">
+        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-0.5 rounded-pill fw-semibold mb-1" style="font-size: 0.75rem;">
+          <i class="bi bi-cpu-fill me-1"></i> Technical Proficiency
+        </span>
+        <h2 class="mb-1" style="font-size: 1.85rem;">Skills &amp; Technology Stack</h2>
+        <p class="text-muted small mb-0">Production-proven engineering capabilities across full-stack web, Python &amp; Django, data analytics, and DevOps collaboration.</p>
       </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row skills-content skills-animation">
+      <!-- Interactive Highlight Strip (Pills) -->
+      <div class="container mb-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="d-flex justify-content-center flex-wrap gap-2 skills-stat-strip">
+          <span class="skills-stat-pill"><i class="bi bi-code-slash text-primary me-1"></i> Full-Stack Web Architecture</span>
+          <span class="skills-stat-pill"><i class="bi bi-filetype-py text-teal me-1" style="color: #0d9488;"></i> Python &amp; Django</span>
+          <span class="skills-stat-pill"><i class="bi bi-bar-chart-fill text-warning me-1"></i> Advanced Data Analytics (EDA)</span>
+          <span class="skills-stat-pill"><i class="bi bi-git text-danger me-1"></i> Git &amp; GitHub Version Control</span>
+        </div>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="150">
+        <div class="row g-3 skills-content skills-animation">
           
-          <div class="col-lg-6">
-            <h4 class="mb-3 text-secondary"><i class="bi bi-code-slash text-primary me-2"></i>Frontend & UI Engineering</h4>
-            <?php foreach ($skills['frontend'] as $skill): ?>
-              <div class="progress">
-                <span class="skill"><span><?= e($skill['name']) ?></span> <i class="val"><?= (int)$skill['val'] ?>%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="<?= (int)$skill['val'] ?>" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            <?php endforeach; ?>
+          <?php foreach ($skills as $domainKey => $domain): ?>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+              <div class="skill-card-modern h-100 rounded-3 bg-white border shadow-sm p-3 d-flex flex-column justify-content-between position-relative">
+                
+                <div>
+                  <!-- Card Header -->
+                  <div class="d-flex align-items-center justify-content-between pb-2 mb-2 border-bottom">
+                    <div class="d-flex align-items-center gap-2">
+                      <div class="skill-domain-icon <?= e($domain['color_class']) ?>">
+                        <i class="<?= e($domain['icon']) ?>"></i>
+                      </div>
+                      <div>
+                        <h5 class="skill-domain-title fw-bold mb-0 text-dark"><?= e($domain['title']) ?></h5>
+                        <span class="skill-domain-sub text-muted"><?= e($domain['subtitle']) ?></span>
+                      </div>
+                    </div>
+                    <span class="badge bg-light text-secondary border small px-2 py-0.5 rounded-pill" style="font-size: 0.65rem;">
+                      4 Skills
+                    </span>
+                  </div>
 
-            <h4 class="mb-3 mt-4 text-secondary"><i class="bi bi-server text-primary me-2"></i>Backend & Database Architecture</h4>
-            <?php foreach ($skills['backend_db'] as $skill): ?>
-              <div class="progress">
-                <span class="skill"><span><?= e($skill['name']) ?></span> <i class="val"><?= (int)$skill['val'] ?>%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="<?= (int)$skill['val'] ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                  <!-- Skills Progress Items -->
+                  <div class="skills-list d-flex flex-column gap-2 mb-2.5">
+                    <?php foreach ($domain['items'] as $item): ?>
+                      <div class="skill-meter-item">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                          <span class="skill-name text-dark fw-semibold text-truncate d-flex align-items-center gap-1.5" title="<?= e($item['name']) ?>">
+                            <i class="<?= e($item['icon']) ?> <?= e($domain['color_class']) ?>-icon flex-shrink-0"></i>
+                            <span class="text-truncate"><?= e($item['name']) ?></span>
+                          </span>
+                          <span class="skill-val-pill <?= e($domain['color_class']) ?>-badge fw-bold flex-shrink-0">
+                            <?= (int)$item['val'] ?>%
+                          </span>
+                        </div>
+                        <div class="progress skill-progress-track">
+                          <div class="progress-bar skill-progress-bar <?= e($domain['color_class']) ?>-bar" role="progressbar" aria-valuenow="<?= (int)$item['val'] ?>" aria-valuemin="0" aria-valuemax="100" style="width: 1%;"></div>
+                        </div>
+                      </div>
+                    <?php endforeach; ?>
+                  </div>
                 </div>
-              </div>
-            <?php endforeach; ?>
-          </div>
 
-          <div class="col-lg-6">
-            <h4 class="mb-3 text-secondary"><i class="bi bi-cpu text-primary me-2"></i>Data Science & Machine Learning</h4>
-            <?php foreach ($skills['data_ml'] as $skill): ?>
-              <div class="progress">
-                <span class="skill"><span><?= e($skill['name']) ?></span> <i class="val"><?= (int)$skill['val'] ?>%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="<?= (int)$skill['val'] ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                <!-- Card Footer Tech Tags -->
+                <div class="pt-2 border-top mt-1">
+                  <div class="d-flex flex-wrap gap-1">
+                    <?php foreach ($domain['tags'] as $tag): ?>
+                      <span class="skill-tech-chip"><?= e($tag) ?></span>
+                    <?php endforeach; ?>
+                  </div>
                 </div>
-              </div>
-            <?php endforeach; ?>
 
-            <div class="p-4 mt-4 bg-white rounded shadow-sm border">
-              <h5 class="fw-bold mb-3"><i class="bi bi-check-all text-success me-2"></i>Key Methodologies & Tools</h5>
-              <div>
-                <span class="badge-tech">Exploratory Data Analysis</span>
-                <span class="badge-tech">Predictive Modeling</span>
-                <span class="badge-tech">RESTful PHP</span>
-                <span class="badge-tech">Relational Normalization</span>
-                <span class="badge-tech">Responsive Grid</span>
-                <span class="badge-tech">Git Version Control</span>
-                <span class="badge-tech">Jupyter Notebooks</span>
-                <span class="badge-tech">Cross-Browser Testing</span>
               </div>
             </div>
-          </div>
+          <?php endforeach; ?>
 
         </div>
       </div>
@@ -360,30 +380,105 @@ require_once __DIR__ . '/includes/navbar.php';
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section light-background">
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Explore recent real-world projects across web development, data analysis, and machine learning.</p>
+      <div class="container section-title pb-2" data-aos="fade-up">
+        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2.5 py-0.5 rounded-pill fw-semibold mb-1" style="font-size: 0.75rem;">
+          <i class="bi bi-grid-fill me-1"></i> Showcase Gallery
+        </span>
+        <h2 class="mb-1" style="font-size: 1.85rem;">Portfolio &amp; Case Studies</h2>
+        <p class="text-muted small mb-0">Production web applications, technical training platforms, data pipelines, and machine learning models.</p>
       </div><!-- End Section Title -->
 
       <div class="container">
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All Projects</li>
-            <li data-filter=".filter-app">Web Development</li>
-            <li data-filter=".filter-product">Data Analysis</li>
-            <li data-filter=".filter-branding">Machine Learning</li>
+          <!-- Portfolio Category Filters -->
+          <ul class="portfolio-filters isotope-filters d-flex justify-content-center flex-wrap gap-1.5 list-unstyled mb-3" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active"><i class="bi bi-collection-fill me-1"></i> All Projects (6)</li>
+            <li data-filter=".filter-web"><i class="bi bi-code-slash me-1"></i> Web Development</li>
+            <li data-filter=".filter-data"><i class="bi bi-bar-chart-fill me-1"></i> Data Analytics</li>
+            <li data-filter=".filter-ml"><i class="bi bi-cpu-fill me-1"></i> Machine Learning</li>
           </ul><!-- End Portfolio Filters -->
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="row g-3 isotope-container" data-aos="fade-up" data-aos-delay="200">
             <?php foreach ($portfolio as $item): ?>
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?= e($item['filter_class']) ?>">
-                <img src="<?= e($item['image']) ?>" class="img-fluid" alt="<?= e($item['title']) ?>">
-                <div class="portfolio-info">
-                  <h4><?= e($item['title']) ?></h4>
-                  <p><?= e($item['category']) ?></p>
-                  <a href="<?= e($item['image']) ?>" title="<?= e($item['title']) ?>" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.php?id=<?= (int)$item['id'] ?>" title="Project Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              <?php 
+                $display_tags = array_slice($item['tech_stack'], 0, 3);
+                $remaining_tags = count($item['tech_stack']) - 3;
+              ?>
+              <div class="col-lg-3 col-md-6 portfolio-item isotope-item <?= e($item['filter_class']) ?>">
+                <div class="portfolio-card-pro h-100 rounded-3 bg-white border shadow-sm overflow-hidden d-flex flex-column justify-content-between position-relative">
+                  
+                  <div>
+                    <!-- Compact Image Frame & Action Overlay -->
+                    <div class="portfolio-media-wrapper position-relative overflow-hidden">
+                      <img src="<?= e($item['image']) ?>" class="img-fluid w-100 portfolio-cover-img" alt="<?= e($item['title']) ?>" loading="lazy">
+                      
+                      <!-- Top Floating Badges -->
+                      <div class="portfolio-badge-strip position-absolute top-0 start-0 end-0 p-2 d-flex justify-content-between align-items-center">
+                        <span class="badge <?= e($item['badge_class']) ?> px-2 py-0.5 rounded-pill fw-semibold" style="font-size: 0.65rem;">
+                          <?= e($item['category']) ?>
+                        </span>
+                        <span class="badge bg-dark bg-opacity-75 text-white border border-white-10 px-1.5 py-0.5 rounded-pill" style="font-size: 0.62rem;">
+                          <?= e($item['date']) ?>
+                        </span>
+                      </div>
+
+                      <!-- Interactive Action Hover Overlay -->
+                      <div class="portfolio-hover-overlay position-absolute d-flex align-items-center justify-content-center gap-2">
+                        <a href="<?= e($item['image']) ?>" title="<?= e($item['title']) ?>" data-gallery="portfolio-gallery" class="glightbox portfolio-action-circle" title="Enlarge Preview">
+                          <i class="bi bi-zoom-in"></i>
+                        </a>
+                        <a href="portfolio-details.php?id=<?= (int)$item['id'] ?>" class="portfolio-action-circle" title="View Case Study">
+                          <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Card Body -->
+                    <div class="px-3 pt-2.5 pb-1">
+                      <span class="portfolio-role-label d-block text-muted fw-bold text-uppercase mb-1" style="font-size: 0.64rem; letter-spacing: 0.4px;">
+                        <i class="bi bi-person-gear text-primary me-1"></i><?= e($item['role']) ?>
+                      </span>
+                      <h4 class="portfolio-title fw-bold mb-1">
+                        <a href="portfolio-details.php?id=<?= (int)$item['id'] ?>" class="text-dark text-decoration-none" title="<?= e($item['title']) ?>">
+                          <?= e($item['title']) ?>
+                        </a>
+                      </h4>
+                      <p class="portfolio-desc text-muted mb-2">
+                        <?= e($item['short_desc']) ?>
+                      </p>
+
+                      <!-- Key Metric Highlight Strip -->
+                      <?php if (!empty($item['metrics'])): ?>
+                        <div class="portfolio-metric-pill py-1 px-2 rounded-2 bg-light border mb-2 d-flex align-items-center gap-1.5">
+                          <i class="bi bi-trophy-fill text-warning flex-shrink-0" style="font-size: 0.72rem;"></i>
+                          <span class="text-secondary fw-semibold text-truncate" style="font-size: 0.69rem;"><?= e($item['metrics']) ?></span>
+                        </div>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+
+                  <!-- Card Footer: Compact Tech Stack & Case Study Link -->
+                  <div class="portfolio-card-footer px-3 pb-2.5 pt-0">
+                    <div class="d-flex flex-wrap gap-1 mb-2">
+                      <?php foreach ($display_tags as $tech): ?>
+                        <span class="portfolio-tech-tag"><?= e($tech) ?></span>
+                      <?php endforeach; ?>
+                      <?php if ($remaining_tags > 0): ?>
+                        <span class="portfolio-tech-tag more-tag" title="<?= e(implode(', ', array_slice($item['tech_stack'], 3))) ?>">+<?= $remaining_tags ?></span>
+                      <?php endif; ?>
+                    </div>
+                    
+                    <div class="d-flex align-items-center justify-content-between pt-2 border-top">
+                      <a href="portfolio-details.php?id=<?= (int)$item['id'] ?>" class="portfolio-case-study-link fw-bold text-primary text-decoration-none">
+                        <span>Case Study</span> <i class="bi bi-arrow-right ms-0.5 transition-arrow"></i>
+                      </a>
+                      <span class="text-muted text-truncate" style="font-size: 0.67rem; max-width: 55%;" title="<?= e($item['client']) ?>">
+                        <i class="bi bi-building me-1"></i><?= e($item['client']) ?>
+                      </span>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             <?php endforeach; ?>

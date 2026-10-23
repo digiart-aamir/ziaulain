@@ -883,6 +883,523 @@ $og_url = BASE_URL . '/' . ($_SERVER['REQUEST_URI'] ?? '');
       transform: scale(1.2);
     }
 
+    /* Skills Section - Modern 4-Column Domain Cards & Micro-Animations */
+    #skills.section {
+      padding: 38px 0 44px 0 !important;
+    }
+    #skills .section-title {
+      padding-bottom: 8px !important;
+      margin-bottom: 0 !important;
+    }
+    #skills .section-title h2 {
+      font-size: 1.8rem;
+      margin-bottom: 4px;
+    }
+    .skills-stat-strip {
+      gap: 8px;
+    }
+    .skills-stat-pill {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #334155;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+    .skills-stat-pill:hover {
+      transform: translateY(-2px);
+      border-color: #0563bb;
+      box-shadow: 0 4px 12px rgba(5, 99, 187, 0.12);
+      color: #0563bb;
+    }
+    .skill-card-modern {
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .skill-card-modern:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+      border-color: rgba(5, 99, 187, 0.3);
+    }
+    .skill-domain-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+    .skill-card-modern:hover .skill-domain-icon {
+      transform: scale(1.08) rotate(3deg);
+    }
+    .skill-domain-title {
+      font-size: 0.88rem;
+      letter-spacing: -0.2px;
+      line-height: 1.25;
+    }
+    .skill-domain-sub {
+      font-size: 0.67rem;
+      display: block;
+      line-height: 1.2;
+    }
+    /* Accent Domains */
+    .skill-accent-blue {
+      background: linear-gradient(135deg, rgba(5, 99, 187, 0.12), rgba(14, 165, 233, 0.15));
+      color: #0284c7;
+      border: 1px solid rgba(14, 165, 233, 0.25);
+    }
+    .skill-accent-blue-bar {
+      background: linear-gradient(90deg, #0563bb, #0ea5e9) !important;
+    }
+    .skill-accent-blue-badge {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+    .skill-accent-blue-icon {
+      color: #0284c7;
+      font-size: 0.85rem;
+    }
+
+    .skill-accent-teal {
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.12), rgba(16, 185, 129, 0.15));
+      color: #0d9488;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+    .skill-accent-teal-bar {
+      background: linear-gradient(90deg, #0d9488, #10b981) !important;
+    }
+    .skill-accent-teal-badge {
+      background: #ccfbf1;
+      color: #0f766e;
+    }
+    .skill-accent-teal-icon {
+      color: #0d9488;
+      font-size: 0.85rem;
+    }
+
+    .skill-accent-amber {
+      background: linear-gradient(135deg, rgba(217, 119, 6, 0.12), rgba(245, 158, 11, 0.15));
+      color: #d97706;
+      border: 1px solid rgba(245, 158, 11, 0.25);
+    }
+    .skill-accent-amber-bar {
+      background: linear-gradient(90deg, #d97706, #f59e0b) !important;
+    }
+    .skill-accent-amber-badge {
+      background: #fef3c7;
+      color: #b45309;
+    }
+    .skill-accent-amber-icon {
+      color: #d97706;
+      font-size: 0.85rem;
+    }
+
+    .skill-accent-purple {
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(99, 102, 241, 0.15));
+      color: #7c3aed;
+      border: 1px solid rgba(124, 58, 237, 0.25);
+    }
+    .skill-accent-purple-bar {
+      background: linear-gradient(90deg, #7c3aed, #8b5cf6) !important;
+    }
+    .skill-accent-purple-badge {
+      background: #ede9fe;
+      color: #6d28d9;
+    }
+    .skill-accent-purple-icon {
+      color: #7c3aed;
+      font-size: 0.85rem;
+    }
+
+    /* Modern Progress Track & Bar */
+    .skills .progress.skill-progress-track {
+      height: 6px !important;
+      background: #f1f5f9 !important;
+      border-radius: 8px !important;
+      overflow: hidden;
+      margin: 0 !important;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+    .skills .progress.skill-progress-track .progress-bar {
+      height: 6px !important;
+      border-radius: 8px !important;
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .skills .progress.skill-progress-track .progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.45) 50%, transparent 100%);
+      animation: skillShimmer 2.4s infinite;
+    }
+    @keyframes skillShimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .skill-val-pill {
+      font-size: 0.65rem;
+      padding: 1px 6px;
+      border-radius: 4px;
+      line-height: 1.3;
+    }
+    .skill-tech-chip {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1px 6px;
+      font-size: 0.62rem;
+      font-weight: 600;
+      color: #475569;
+      transition: all 0.2s ease;
+      display: inline-block;
+      line-height: 1.4;
+    }
+    .skill-tech-chip:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    /* Portfolio Section - Modern Cards & Isotope Filters */
+    .portfolio.section {
+      padding: 55px 0 60px 0;
+    }
+    .portfolio-filters.isotope-filters li {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      color: #64748b;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+    .portfolio-filters.isotope-filters li:hover {
+      background: #f1f5f9;
+      color: #1e293b;
+      border-color: #cbd5e1;
+    }
+    .portfolio-filters.isotope-filters li.filter-active {
+      background: linear-gradient(135deg, #0563bb, #0284c7) !important;
+      color: #ffffff !important;
+      border-color: #0563bb !important;
+      box-shadow: 0 4px 14px rgba(5, 99, 187, 0.28);
+    }
+    /* Compact Portfolio Section & Cards for Reduced VH */
+    #portfolio.section {
+      padding: 38px 0 44px 0 !important;
+    }
+    #portfolio .section-title {
+      padding-bottom: 10px !important;
+      margin-bottom: 0 !important;
+    }
+    #portfolio .section-title h2 {
+      font-size: 1.8rem;
+      margin-bottom: 4px;
+    }
+    .portfolio-filters.isotope-filters {
+      margin-bottom: 1.25rem !important;
+      gap: 6px !important;
+    }
+    .portfolio-filters.isotope-filters li {
+      padding: 4px 14px;
+      font-size: 0.78rem;
+      border-radius: 20px;
+    }
+    .badge-service-primary {
+      background: linear-gradient(135deg, #0563bb, #0284c7) !important;
+      color: #ffffff !important;
+      box-shadow: 0 2px 8px rgba(5, 99, 187, 0.4);
+    }
+    .badge-service-warning {
+      background: linear-gradient(135deg, #d97706, #f59e0b) !important;
+      color: #ffffff !important;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+    }
+    .badge-service-info {
+      background: linear-gradient(135deg, #0891b2, #06b6d4) !important;
+      color: #ffffff !important;
+      box-shadow: 0 2px 8px rgba(8, 145, 178, 0.4);
+    }
+    .badge-service-purple {
+      background: linear-gradient(135deg, #7c3aed, #8b5cf6) !important;
+      color: #ffffff !important;
+      box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
+    }
+    .badge-service-rose {
+      background: linear-gradient(135deg, #e11d48, #f43f5e) !important;
+      color: #ffffff !important;
+      box-shadow: 0 2px 8px rgba(225, 29, 72, 0.4);
+    }
+    .portfolio-card-pro {
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .portfolio-card-pro:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      border-color: rgba(5, 99, 187, 0.3);
+    }
+    .portfolio-media-wrapper {
+      height: 135px;
+      overflow: hidden;
+      background: #0b1528;
+      position: relative;
+    }
+    .portfolio-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .portfolio-card-pro:hover .portfolio-cover-img {
+      transform: scale(1.06);
+    }
+    .portfolio-hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.62);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      backdrop-filter: blur(2px);
+    }
+    .portfolio-card-pro:hover .portfolio-hover-overlay {
+      opacity: 1;
+    }
+    .portfolio-action-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #0f172a !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+    .portfolio-action-circle:hover {
+      background: #0563bb;
+      color: #ffffff !important;
+      transform: scale(1.08);
+    }
+    .portfolio-title {
+      font-size: 0.92rem;
+      line-height: 1.25;
+      min-height: 2.3rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .portfolio-title a {
+      transition: color 0.2s ease;
+    }
+    .portfolio-card-pro:hover .portfolio-title a {
+      color: #0563bb !important;
+    }
+    .portfolio-desc {
+      font-size: 0.73rem;
+      line-height: 1.35;
+      color: #64748b;
+      margin-bottom: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 1.95rem;
+    }
+    .portfolio-metric-pill {
+      font-size: 0.69rem;
+      padding: 2px 7px !important;
+      border-radius: 6px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+    }
+    .portfolio-tech-tag {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1px 6px;
+      font-size: 0.63rem;
+      font-weight: 600;
+      color: #475569;
+      transition: all 0.2s ease;
+      display: inline-block;
+      line-height: 1.4;
+    }
+    .portfolio-tech-tag:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .portfolio-tech-tag.more-tag {
+      background: #e0f2fe;
+      color: #0369a1;
+      border-color: #bae6fd;
+      font-weight: 700;
+    }
+    .portfolio-case-study-link {
+      font-size: 0.76rem;
+    }
+    .portfolio-card-pro:hover .transition-arrow {
+      transform: translateX(3px);
+    }
+
+    /* Portfolio Details Page Specific Styles */
+    .portfolio-hero-banner {
+      background: linear-gradient(135deg, #070f1e 0%, #0d1e38 50%, #081427 100%);
+      padding: 45px 0 52px 0;
+      color: #ffffff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .portfolio-ambient-glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      right: -100px;
+      top: -150px;
+      background: radial-gradient(circle, rgba(5, 99, 187, 0.25) 0%, rgba(56, 189, 248, 0.08) 50%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .portfolio-breadcrumb-nav .breadcrumb {
+      background: transparent;
+      padding: 0;
+    }
+    .portfolio-breadcrumb-nav .breadcrumb-item a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: color 0.2s ease;
+    }
+    .portfolio-breadcrumb-nav .breadcrumb-item a:hover {
+      color: #38bdf8;
+    }
+    .portfolio-breadcrumb-nav .breadcrumb-item + .breadcrumb-item::before {
+      color: rgba(255, 255, 255, 0.3);
+    }
+    .portfolio-hero-cta {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+    }
+    .portfolio-meta-chip {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      color: #e2e8f0;
+    }
+    .portfolio-featured-frame {
+      max-height: 480px;
+      background: #0b1528;
+    }
+    .portfolio-featured-img {
+      max-height: 480px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .portfolio-frame-overlay {
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.3) 50%, transparent 100%);
+    }
+    .portfolio-case-card {
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+    .portfolio-tech-tag-pro {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #334155;
+      display: inline-block;
+      transition: all 0.2s ease;
+    }
+    .portfolio-tech-tag-pro:hover {
+      background: #0563bb;
+      color: #ffffff;
+      border-color: #0563bb;
+      transform: translateY(-1px);
+    }
+    .portfolio-sidebar-sticky {
+      position: sticky;
+      top: 25px;
+    }
+    .meta-icon-box {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .portfolio-other-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #f8fafc;
+      border: 1px solid #edf2f7;
+      text-decoration: none;
+      color: #1e293b;
+      transition: all 0.2s ease;
+    }
+    .portfolio-other-item:hover {
+      background: #ffffff;
+      border-color: #38bdf8;
+      transform: translateX(3px);
+      box-shadow: 0 4px 12px rgba(5, 99, 187, 0.06);
+    }
+    .portfolio-other-item.active {
+      background: #0563bb;
+      color: #ffffff !important;
+      border-color: #0563bb;
+    }
+    .portfolio-other-item.active strong {
+      color: #ffffff !important;
+    }
+    .portfolio-other-item.active span {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+    .portfolio-other-item.active i {
+      color: #ffffff !important;
+    }
+    .portfolio-inter-nav {
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 16px;
+    }
+
     /* Services Section - Modern Tech Cards & Layout */
     .services.section {
       padding: 55px 0 60px 0;
