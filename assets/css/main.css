@@ -1474,3 +1474,400 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/*--------------------------------------------------------------
+# Coursera Specializations & Master-Detail UI Section
+--------------------------------------------------------------*/
+.coursera-spec-section {
+  background-color: #f8fafc;
+  position: relative;
+  overflow: hidden;
+}
+
+.coursera-top-pill {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #dbeafe;
+  padding: 4px 14px;
+  border-radius: 50rem;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.coursera-top-pill .dot-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2563eb;
+  display: inline-block;
+}
+
+.coursera-main-title {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+}
+
+.coursera-gradient-text {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #c026d3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.coursera-filter-pills {
+  row-gap: 0.5rem;
+}
+
+.coursera-filter-btn {
+  border-radius: 50rem;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  transition: all 0.2s ease;
+}
+
+.coursera-filter-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+.coursera-filter-btn.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+/* Master Column Cards */
+.coursera-cards-list {
+  row-gap: 14px;
+}
+
+.coursera-spec-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  outline: none;
+}
+
+.coursera-spec-card:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.coursera-spec-card.active-spec {
+  border: 2px solid transparent !important;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%) border-box !important;
+  box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.2), 0 0 0 1px rgba(139, 92, 246, 0.1) !important;
+  transform: translateY(-2px);
+}
+
+.coursera-tag-pill {
+  background: #e0f2fe;
+  color: #0284c7;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2.5px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.coursera-provider-text {
+  color: #64748b;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.coursera-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.coursera-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.coursera-card-meta {
+  color: #64748b;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.coursera-card-meta .verified-badge {
+  color: #10b981;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.coursera-chevron {
+  color: #94a3b8;
+  font-size: 1.15rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.coursera-spec-card:hover .coursera-chevron {
+  transform: translateX(3px);
+  color: #2563eb;
+}
+
+.coursera-spec-card.active-spec .coursera-chevron {
+  color: #2563eb;
+}
+
+.coursera-left-footer {
+  border-top: 1px solid #e2e8f0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.green-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.coursera-id-link {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.coursera-id-link:hover {
+  text-decoration: underline;
+}
+
+/* Detail Panel on Right */
+.coursera-detail-panel {
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
+  padding: 26px;
+}
+
+.detail-provider-pill {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #dbeafe;
+  padding: 3px 10px;
+  border-radius: 50rem;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blue-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2563eb;
+  display: inline-block;
+}
+
+.detail-modules-count {
+  color: #64748b;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.detail-spec-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.coursera-verify-btn {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 7px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  transition: all 0.2s ease;
+}
+
+.coursera-verify-btn:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+  color: #ffffff;
+}
+
+.coursera-expand-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.coursera-expand-btn:hover {
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+/* Central Certificate Preview Viewer Frame */
+.coursera-viewer-frame {
+  background: #f1f5f9;
+  border-radius: 18px;
+  min-height: 350px;
+  max-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.cert-main-img {
+  max-height: 340px;
+  width: auto;
+  max-width: 95%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, opacity 0.25s ease;
+}
+
+.cert-main-img:hover {
+  transform: scale(1.02);
+}
+
+/* Modules Strip */
+.modules-strip-heading {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #475569;
+}
+
+.inspect-hint-link {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.coursera-modules-carousel {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.coursera-modules-carousel::-webkit-scrollbar {
+  height: 5px;
+}
+
+.coursera-modules-carousel::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.module-thumb-card {
+  flex: 0 0 110px;
+  width: 110px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.module-thumb-card:hover {
+  border-color: #94a3b8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.module-thumb-card.active-module {
+  border: 2px solid #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  transform: translateY(-2px);
+}
+
+.module-thumb-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #f1f5f9;
+}
+
+.module-thumb-title {
+  font-size: 10px;
+  font-weight: 600;
+  color: #475569;
+  margin-top: 4px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .coursera-main-title {
+    font-size: 1.85rem;
+  }
+  .coursera-detail-panel {
+    padding: 20px;
+  }
+  .coursera-viewer-frame {
+    min-height: 260px;
+    padding: 12px;
+  }
+  .cert-main-img {
+    max-height: 240px;
+  }
+}

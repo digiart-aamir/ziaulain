@@ -57,3 +57,12 @@ function url(string $path = ''): string {
     }
     return ltrim($path, '/');
 }
+
+/**
+ * Safe URL-encoded file path helper (for filenames and paths with spaces)
+ */
+function file_url(string $path): string {
+    $parts = explode('/', str_replace('\\', '/', $path));
+    $encoded = array_map('rawurlencode', $parts);
+    return implode('/', $encoded);
+}

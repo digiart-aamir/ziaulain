@@ -488,6 +488,9 @@ require_once __DIR__ . '/includes/navbar.php';
       </div>
     </section><!-- /Portfolio Section -->
 
+    <!-- Certificates & Specializations Section -->
+    <?php require_once __DIR__ . '/includes/certificates_section.php'; ?>
+
     <!-- Services Section -->
     <section id="services" class="services section">
       <!-- Section Title -->

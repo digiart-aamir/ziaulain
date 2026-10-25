@@ -276,4 +276,191 @@
     });
   }
 
+  /**
+   * Coursera Specializations Interactive Master-Detail UI
+   */
+  const specCards = document.querySelectorAll('.coursera-spec-card');
+  const filterBtns = document.querySelectorAll('.coursera-filter-btn');
+  const detailProviderText = document.getElementById('detailProviderText');
+  const detailModulesCount = document.getElementById('detailModulesCount');
+  const detailSpecTitle = document.getElementById('detailSpecTitle');
+  const detailVerifyBtn = document.getElementById('detailVerifyBtn');
+  const detailExpandBtn = document.getElementById('detailExpandBtn');
+  const detailImageLink = document.getElementById('detailImageLink');
+  const detailMainImg = document.getElementById('detailMainImg');
+  const detailResetBar = document.getElementById('detailResetBar');
+  const detailResetBtn = document.getElementById('detailResetBtn');
+  const modulesStripHeading = document.getElementById('modulesStripHeading');
+  const modulesCarousel = document.getElementById('courseraModulesCarousel');
+
+  let currentActiveSpec = (window.COURSERA_DATA && window.COURSERA_DATA.length > 0) ? window.COURSERA_DATA[0] : null;
+
+  function renderModules(courses) {
+    if (!modulesCarousel) return;
+    modulesCarousel.innerHTML = '';
+    courses.forEach((c) => {
+      const card = document.createElement('div');
+      card.className = 'module-thumb-card';
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'button');
+      card.title = c.full_title || c.title;
+      card.innerHTML = `
+        <img src="${c.thumb}" alt="${c.title}" class="module-thumb-img" loading="lazy">
+        <div class="module-thumb-title">${c.title}</div>
+      `;
+
+      card.addEventListener('click', function() {
+        document.querySelectorAll('.module-thumb-card').forEach(m => m.classList.remove('active-module'));
+        this.classList.add('active-module');
+
+        // Transition main preview image
+        if (detailMainImg) {
+          detailMainImg.style.opacity = '0';
+          setTimeout(() => {
+            detailMainImg.src = c.thumb;
+            detailMainImg.alt = c.full_title || c.title;
+            detailMainImg.style.opacity = '1';
+          }, 150);
+        }
+
+        if (detailImageLink) {
+          detailImageLink.href = c.thumb;
+          detailImageLink.title = c.full_title || c.title;
+        }
+        if (detailExpandBtn) {
+          detailExpandBtn.href = c.thumb;
+          detailExpandBtn.title = (c.full_title || c.title) + ' (Full Preview)';
+        }
+        if (detailSpecTitle) {
+          detailSpecTitle.textContent = c.full_title || c.title;
+        }
+        if (detailModulesCount && currentActiveSpec) {
+          detailModulesCount.textContent = 'Module ' + c.course_num + ' of ' + currentActiveSpec.courses_count;
+        }
+        if (detailVerifyBtn) {
+          detailVerifyBtn.href = c.verify_url;
+        }
+        if (detailResetBar) {
+          detailResetBar.classList.remove('d-none');
+        }
+
+        // Re-init glightbox
+        if (typeof GLightbox !== 'undefined') {
+          GLightbox({ selector: '.glightbox' });
+        }
+      });
+
+      modulesCarousel.appendChild(card);
+    });
+  }
+
+  function activateSpec(specId) {
+    if (!window.COURSERA_DATA) return;
+    const spec = window.COURSERA_DATA.find(s => s.id === specId);
+    if (!spec) return;
+
+    currentActiveSpec = spec;
+
+    // Update left cards active state
+    specCards.forEach(c => {
+      if (c.dataset.specId === specId) {
+        c.classList.add('active-spec');
+      } else {
+        c.classList.remove('active-spec');
+      }
+    });
+
+    // Update right details
+    if (detailProviderText) detailProviderText.textContent = spec.provider_label;
+    if (detailModulesCount) detailModulesCount.textContent = spec.courses_count + ' Completed Modules';
+    if (detailSpecTitle) detailSpecTitle.textContent = spec.title;
+    if (detailVerifyBtn) detailVerifyBtn.href = spec.verify_url;
+    if (detailExpandBtn) {
+      detailExpandBtn.href = spec.thumb;
+      detailExpandBtn.title = spec.title + ' (Full Preview)';
+    }
+    if (detailImageLink) {
+      detailImageLink.href = spec.thumb;
+      detailImageLink.title = spec.title;
+    }
+
+    if (detailMainImg) {
+      detailMainImg.style.opacity = '0';
+      setTimeout(() => {
+        detailMainImg.src = spec.thumb;
+        detailMainImg.alt = spec.title;
+        detailMainImg.style.opacity = '1';
+      }, 150);
+    }
+
+    if (detailResetBar) {
+      detailResetBar.classList.add('d-none');
+    }
+
+    if (modulesStripHeading) {
+      modulesStripHeading.textContent = 'COURSE MODULES COMPLETED (' + spec.courses.length + ')';
+    }
+
+    // Render course thumbnails
+    renderModules(spec.courses);
+
+    // Refresh glightbox
+    if (typeof GLightbox !== 'undefined') {
+      GLightbox({ selector: '.glightbox' });
+    }
+  }
+
+  if (specCards.length > 0) {
+    specCards.forEach(card => {
+      card.addEventListener('click', function() {
+        activateSpec(this.dataset.specId);
+      });
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activateSpec(this.dataset.specId);
+        }
+      });
+    });
+
+    // Reset button handler (returns to master specialization)
+    if (detailResetBtn) {
+      detailResetBtn.addEventListener('click', function() {
+        if (currentActiveSpec) {
+          activateSpec(currentActiveSpec.id);
+        }
+      });
+    }
+
+    // Top filter pills
+    if (filterBtns.length > 0) {
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          const filter = this.dataset.filter;
+
+          let firstVisibleId = null;
+          specCards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+              card.style.display = 'block';
+              if (!firstVisibleId) firstVisibleId = card.dataset.specId;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          if (firstVisibleId) {
+            activateSpec(firstVisibleId);
+          }
+        });
+      });
+    }
+
+    // Initialize modules carousel for first spec
+    if (currentActiveSpec) {
+      renderModules(currentActiveSpec.courses);
+    }
+  }
+
 })();

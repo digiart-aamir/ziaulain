@@ -5,6 +5,7 @@
  */
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/certificates_data.php';
 
 // Profile Information
 $profile = [
@@ -25,6 +26,7 @@ $profile = [
     'about_text' => 'I am Sidra Zia, an Information Technology graduate from Mirpur University of Science and Technology (MUST) whose primary career is Full-Stack Web Development alongside technical Web & IT Training. I bridge the gap between creative, responsive user interfaces and robust backend architectures — building accessible web applications with clean code in PHP, MySQL, JavaScript, and modern CSS3. Concurrently, as a dedicated Web & IT Trainer, I mentor students and professionals in coding fundamentals and modern digital development.',
     'about_metrics' => [
         ['icon' => 'bi bi-mortarboard-fill', 'label' => 'Degree', 'value' => 'BS Information Technology (MUST)'],
+        ['icon' => 'bi bi-patch-check-fill', 'label' => 'Certifications', 'value' => '20 Verified (Meta, Stanford, Microsoft)'],
         ['icon' => 'bi bi-code-slash', 'label' => 'Primary Stack', 'value' => 'PHP, MySQL, Modern JS, Bootstrap'],
         ['icon' => 'bi bi-clock-history', 'label' => 'Experience', 'value' => '3+ Years Web & IT Training'],
         ['icon' => 'bi bi-kanban-fill', 'label' => 'Completed Projects', 'value' => '25+ Web & Data Apps'],
