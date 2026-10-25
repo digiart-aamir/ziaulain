@@ -1,7 +1,7 @@
 <?php
 /**
  * Master Footer Partial
- * Sidra Zia Portfolio
+ * Zia Ul Ain Portfolio
  */
 ?>
 <?php
@@ -165,8 +165,83 @@ $tech_badges = [
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+  <!-- Fancy Cyber Coding Preloader -->
+  <div id="preloader" class="fancy-preloader">
+    <!-- Ambient Cyber Glows -->
+    <div class="preloader-glow glow-1"></div>
+    <div class="preloader-glow glow-2"></div>
+
+    <div class="preloader-content text-center">
+      
+      <!-- Central Animated Code Emblem -->
+      <div class="preloader-emblem mb-3 position-relative">
+        <div class="emblem-ring ring-outer"></div>
+        <div class="emblem-ring ring-inner"></div>
+        <div class="emblem-core">
+          <div class="core-brackets">
+            <span class="bracket-left">&lt;</span><span class="core-slash">/</span><span class="bracket-right">&gt;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Developer Identity -->
+      <div class="preloader-identity mb-3">
+        <h2 class="preloader-name mb-1">Zia Ul Ain</h2>
+        <div class="preloader-role">
+          <span class="role-bracket">&lt;</span>
+          <span class="role-text">Full-Stack Engineer &amp; IT Trainer</span>
+          <span class="role-bracket">/&gt;</span>
+        </div>
+      </div>
+
+      <!-- Live Cyber Code Terminal -->
+      <div class="preloader-terminal mb-3 text-start">
+        <div class="terminal-dots-bar d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-1.5">
+            <span class="t-dot dot-r"></span>
+            <span class="t-dot dot-y"></span>
+            <span class="t-dot dot-g"></span>
+          </div>
+          <span class="terminal-filename">ziaulain.portfolio.init.ts</span>
+          <span class="terminal-tag">v2.6</span>
+        </div>
+        <div class="terminal-code-body">
+          <div class="code-row">
+            <span class="c-keyword">import</span> <span class="c-import">{ Excellence, ModernWeb }</span> <span class="c-keyword">from</span> <span class="c-string">'zia-ul-ain'</span>;
+          </div>
+          <div class="code-row">
+            <span class="c-keyword">const</span> <span class="c-var">stack</span> = [<span class="c-string">'PHP 8'</span>, <span class="c-string">'Python'</span>, <span class="c-string">'React'</span>, <span class="c-string">'MySQL'</span>];
+          </div>
+          <div class="code-row status-row">
+            <span class="c-prompt">&gt;</span> <span class="c-fn">System.boot()</span>: <span class="c-status" id="preloaderStatusText">Compiling layout architecture...</span><span class="c-cursor"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- High-Tech Progress Bar -->
+      <div class="preloader-progress-wrap">
+        <div class="d-flex justify-content-between align-items-center mb-1 text-white-50" style="font-size: 0.78rem;">
+          <span class="status-label"><i class="bi bi-cpu text-info me-1"></i> <span id="preloaderStepLabel">Initializing Environment</span></span>
+          <span class="progress-percent font-monospace text-info fw-bold" id="preloaderPercent">0%</span>
+        </div>
+        <div class="preloader-progress-track">
+          <div class="preloader-progress-fill" id="preloaderFill"></div>
+        </div>
+      </div>
+
+      <!-- Floating Tech Badges -->
+      <div class="preloader-tech-chips d-flex justify-content-center gap-2 mt-3">
+        <span class="p-chip"><i class="bi bi-filetype-php text-primary"></i> PHP</span>
+        <span class="p-chip"><i class="bi bi-filetype-js text-warning"></i> Modern JS</span>
+        <span class="p-chip"><i class="bi bi-filetype-py text-info"></i> Python</span>
+        <span class="p-chip"><i class="bi bi-database-fill text-success"></i> MySQL</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Floating AI Assistant Chatbot Partial -->
+  <?php require_once __DIR__ . '/chatbot.php'; ?>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -180,11 +255,18 @@ $tech_badges = [
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
+  <!-- Markdown & Sanitizer for AI Chatbot -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
   <!-- Interactive Cursor Particles for Hero -->
   <script src="assets/js/hero-particles.js"></script>
+
+  <!-- AI Chatbot Controller -->
+  <script src="assets/js/chatbot.js"></script>
 
 </body>
 

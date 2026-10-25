@@ -1,13 +1,13 @@
 <?php
 /**
  * Master Header Partial
- * Sidra Zia Portfolio
+ * Zia Ul Ain Portfolio
  */
 require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/data.php';
 
 $title = isset($page_title) ? e($page_title) . " | " . SITE_NAME : SITE_NAME . " | " . SITE_TAGLINE;
-$description = isset($page_desc) ? e($page_desc) : "Official professional portfolio of Sidra Zia, Information Technology graduate specializing in Web Development, Data Analysis, and Machine Learning.";
+$description = isset($page_desc) ? e($page_desc) : "Official professional portfolio of Zia Ul Ain, Information Technology graduate specializing in Web Development, Data Analysis, and Machine Learning.";
 $current_page = $current_page ?? 'home';
 $og_image = isset($page_image) ? BASE_URL . '/' . ltrim($page_image, '/') : BASE_URL . '/assets/img/profile-img.jpg';
 $og_url = BASE_URL . '/' . ($_SERVER['REQUEST_URI'] ?? '');
@@ -20,7 +20,7 @@ $og_url = BASE_URL . '/' . ($_SERVER['REQUEST_URI'] ?? '');
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title><?= $title ?></title>
   <meta name="description" content="<?= $description ?>">
-  <meta name="keywords" content="Sidra Zia, Web Developer, Data Analyst, Machine Learning, Python, PHP, IT Trainer, Islamabad, MUST">
+  <meta name="keywords" content="Zia Ul Ain, Web Developer, Data Analyst, Machine Learning, Python, PHP, IT Trainer, Islamabad, MUST">
   <meta name="author" content="<?= SITE_NAME ?>">
 
   <!-- Open Graph / Facebook -->
@@ -46,7 +46,7 @@ $og_url = BASE_URL . '/' . ($_SERVER['REQUEST_URI'] ?? '');
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -57,6 +57,9 @@ $og_url = BASE_URL . '/' . ($_SERVER['REQUEST_URI'] ?? '');
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- AI Chatbot CSS -->
+  <link href="assets/css/chatbot.css" rel="stylesheet">
 
   <!-- Custom Enhanced CSS -->
   <style>

@@ -1,6 +1,6 @@
 /**
  * Interactive Cursor-Oriented Particle Network for Hero Section
- * Sidra Zia Portfolio - Web Specialist Edition
+ * Zia Ul Ain Portfolio - Web Specialist Edition
  */
 (function () {
   'use strict';

@@ -1,7 +1,7 @@
 <?php
 /**
  * Single Source of Truth: Portfolio Data Repository
- * Sidra Zia Portfolio
+ * Zia Ul Ain Portfolio
  */
 
 require_once __DIR__ . '/config.php';
@@ -9,7 +9,7 @@ require_once __DIR__ . '/certificates_data.php';
 
 // Profile Information
 $profile = [
-    'name' => 'Sidra Zia',
+    'name' => 'Zia Ul Ain',
     'title' => 'Full-Stack Web Developer',
     'tagline' => 'Crafting high-performance, responsive web applications and seamless digital experiences with clean code and modern architecture.',
     'typed_items' => 'Full-Stack Web Developer, Modern UI/UX Designer, PHP & MySQL Developer, Responsive Web Engineer, Web Performance Specialist',
@@ -23,7 +23,7 @@ $profile = [
     'freelance' => 'Available for Projects',
     'profile_image' => 'assets/img/profile-img.jpg',
     'hero_image' => 'assets/img/hero-bg.jpg',
-    'about_text' => 'I am Sidra Zia, an Information Technology graduate from Mirpur University of Science and Technology (MUST) whose primary career is Full-Stack Web Development alongside technical Web & IT Training. I bridge the gap between creative, responsive user interfaces and robust backend architectures — building accessible web applications with clean code in PHP, MySQL, JavaScript, and modern CSS3. Concurrently, as a dedicated Web & IT Trainer, I mentor students and professionals in coding fundamentals and modern digital development.',
+    'about_text' => 'I am Zia Ul Ain, an Information Technology graduate from Mirpur University of Science and Technology (MUST) whose primary career is Full-Stack Web Development alongside technical Web & IT Training. I bridge the gap between creative, responsive user interfaces and robust backend architectures — building accessible web applications with clean code in PHP, MySQL, JavaScript, and modern CSS3. Concurrently, as a dedicated Web & IT Trainer, I mentor students and professionals in coding fundamentals and modern digital development.',
     'about_metrics' => [
         ['icon' => 'bi bi-mortarboard-fill', 'label' => 'Degree', 'value' => 'BS Information Technology (MUST)'],
         ['icon' => 'bi bi-patch-check-fill', 'label' => 'Certifications', 'value' => '20 Verified (Meta, Stanford, Microsoft)'],

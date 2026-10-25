@@ -1,10 +1,10 @@
 <?php
 /**
  * Master Homepage
- * Sidra Zia Portfolio
+ * Zia Ul Ain Portfolio
  */
 $current_page = 'home';
-$page_title = 'Sidra Zia | IT Specialist, Web Developer & Data Analyst';
+$page_title = 'Zia Ul Ain | IT Specialist, Web Developer & Data Analyst';
 $body_class = 'index-page';
 
 require_once __DIR__ . '/includes/header.php';
@@ -56,7 +56,7 @@ require_once __DIR__ . '/includes/navbar.php';
                   </div>
                   <div class="terminal-title">
                     <i class="bi bi-code-slash text-info me-1"></i>
-                    <span>SidraZia.web.config.js</span>
+                    <span>ZiaUlAin.web.config.js</span>
                   </div>
                   <div class="terminal-actions">
                     <button type="button" class="terminal-run-btn" id="terminalRunBtn" title="Test Build Preview">

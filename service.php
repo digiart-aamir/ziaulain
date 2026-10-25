@@ -1,7 +1,7 @@
 <?php
 /**
  * Dynamic Service Details Page
- * Sidra Zia Portfolio
+ * Zia Ul Ain Portfolio
  * 
  * Replaces machine.html, data analyis.html, web design.html,
  * consulting and traning.html, database.html, marketing.html
@@ -61,7 +61,7 @@ require_once __DIR__ . '/includes/navbar.php';
             <!-- Quick Metadata Pills -->
             <div class="d-flex flex-wrap gap-2 service-meta-pills">
               <div class="service-meta-chip">
-                <i class="bi bi-person-badge text-primary me-1"></i> Specialist: <strong>Sidra Zia</strong>
+                <i class="bi bi-person-badge text-primary me-1"></i> Specialist: <strong>Zia Ul Ain</strong>
               </div>
               <div class="service-meta-chip">
                 <i class="bi bi-geo-alt text-primary me-1"></i> Mode: <strong>Remote &amp; Islamabad Onsite</strong>
@@ -80,7 +80,7 @@ require_once __DIR__ . '/includes/navbar.php';
                 <a href="index.php#contact" class="btn btn-primary btn-sm py-2 rounded-pill fw-semibold shadow-sm d-flex align-items-center justify-content-center gap-2">
                   <i class="bi bi-chat-dots-fill"></i> Inquire for This Project
                 </a>
-                <a href="https://wa.me/923115912874?text=<?= urlencode("Hello Sidra, I'm interested in your " . $service['title'] . " service.") ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success text-white border-success-subtle btn-sm py-2 rounded-pill fw-semibold d-flex align-items-center justify-content-center gap-2">
+                <a href="https://wa.me/923115912874?text=<?= urlencode("Hello Zia Ul Ain, I'm interested in your " . $service['title'] . " service.") ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success text-white border-success-subtle btn-sm py-2 rounded-pill fw-semibold d-flex align-items-center justify-content-center gap-2">
                   <i class="bi bi-whatsapp text-success"></i> WhatsApp Quick Chat
                 </a>
               </div>

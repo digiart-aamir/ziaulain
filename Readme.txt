@@ -1,3 +1,3 @@
-this is me sidra zia 
-index.html is strting point to website
-this is personal and professional portfoilo
+this is me Zia Ul Ain 
+index.php is starting point to website
+this is personal and professional portfolio

@@ -1,7 +1,7 @@
 <?php
 /**
  * Global Configuration & Helper Utilities
- * Sidra Zia Portfolio
+ * Zia Ul Ain Portfolio
  */
 
 // Prevent multiple definitions
@@ -10,7 +10,7 @@ if (!defined('APP_INIT')) {
 }
 
 // Site Constants
-define('SITE_NAME', 'Sidra Zia');
+define('SITE_NAME', 'Zia Ul Ain');
 define('SITE_TAGLINE', 'Full-Stack Web Developer & IT Specialist');
 define('SITE_EMAIL', 'zziaulain@gmail.com');
 define('SITE_PHONE', '+923115912874');

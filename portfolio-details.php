@@ -1,7 +1,7 @@
 <?php
 /**
  * Dynamic Portfolio Details Page
- * Sidra Zia Portfolio
+ * Zia Ul Ain Portfolio
  * 
  * Replaces the static placeholder portfolio-details.html
  */
@@ -86,7 +86,7 @@ require_once __DIR__ . '/includes/navbar.php';
                 <a href="index.php#contact" class="btn btn-primary btn-sm py-2 rounded-pill fw-semibold shadow-sm d-flex align-items-center justify-content-center gap-2">
                   <i class="bi bi-chat-dots-fill"></i> Inquire About This Project
                 </a>
-                <a href="https://wa.me/923115912874?text=<?= urlencode("Hello Sidra, I saw your project: " . $project['title'] . " and would like to discuss a similar project.") ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success text-white border-success-subtle btn-sm py-2 rounded-pill fw-semibold d-flex align-items-center justify-content-center gap-2">
+                <a href="https://wa.me/923115912874?text=<?= urlencode("Hello Zia Ul Ain, I saw your project: " . $project['title'] . " and would like to discuss a similar project.") ?>" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success text-white border-success-subtle btn-sm py-2 rounded-pill fw-semibold d-flex align-items-center justify-content-center gap-2">
                   <i class="bi bi-whatsapp text-success"></i> WhatsApp Inquiry
                 </a>
               </div>

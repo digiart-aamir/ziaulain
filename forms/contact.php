@@ -1,7 +1,7 @@
 <?php
 /**
  * Standalone Contact Form Processor (Zero-DB)
- * Sidra Zia Portfolio
+ * Zia Ul Ain Portfolio
  * 
  * Securely logs incoming messages to data/messages.json
  * Responds with 'OK' for assets/vendor/php-email-form/validate.js

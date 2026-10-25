@@ -1,7 +1,7 @@
 <?php
 /**
  * Master Navigation Partial
- * Sidra Zia Portfolio
+ * Zia Ul Ain Portfolio
  */
 $is_home = ($current_page ?? 'home') === 'home';
 $home_prefix = $is_home ? '' : 'index.php';

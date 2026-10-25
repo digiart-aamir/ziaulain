@@ -46,13 +46,77 @@
   });
 
   /**
-   * Preloader
+   * Cyber Coding Preloader - Zia Ul Ain
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
+    const fill = document.getElementById('preloaderFill');
+    const percentEl = document.getElementById('preloaderPercent');
+    const statusText = document.getElementById('preloaderStatusText');
+    const stepLabel = document.getElementById('preloaderStepLabel');
+
+    const steps = [
+      { at: 20, label: "Parsing Architecture", status: "Compiling layout & modern CSS3..." },
+      { at: 50, label: "Loading Verified Credentials", status: "Importing 20 Coursera licenses..." },
+      { at: 80, label: "Initializing Code Engine", status: "Binding interactive UI modules..." },
+      { at: 100, label: "System Online", status: "Environment ready 🚀" }
+    ];
+
+    let progress = 0;
+    let windowLoaded = false;
+
     window.addEventListener('load', () => {
-      preloader.remove();
+      windowLoaded = true;
     });
+
+    const interval = setInterval(() => {
+      if (progress < 90) {
+        progress += Math.floor(Math.random() * 8) + 5;
+      } else if (windowLoaded && progress < 100) {
+        progress += 5;
+      } else if (!windowLoaded && progress >= 90 && progress < 96) {
+        progress += 1;
+      }
+
+      if (progress > 100) progress = 100;
+
+      if (fill) fill.style.width = progress + '%';
+      if (percentEl) percentEl.textContent = progress + '%';
+
+      for (let i = 0; i < steps.length; i++) {
+        if (progress >= steps[i].at) {
+          if (stepLabel) stepLabel.textContent = steps[i].label;
+          if (statusText) statusText.textContent = steps[i].status;
+        }
+      }
+
+      if (progress >= 100 && windowLoaded) {
+        clearInterval(interval);
+        setTimeout(() => {
+          preloader.classList.add('preloader-loaded');
+          setTimeout(() => {
+            if (preloader && preloader.parentNode) {
+              preloader.remove();
+            }
+          }, 650);
+        }, 280);
+      }
+    }, 40);
+
+    // Fallback safety timeout (3.5s max)
+    setTimeout(() => {
+      if (preloader && !preloader.classList.contains('preloader-loaded')) {
+        clearInterval(interval);
+        if (fill) fill.style.width = '100%';
+        if (percentEl) percentEl.textContent = '100%';
+        preloader.classList.add('preloader-loaded');
+        setTimeout(() => {
+          if (preloader && preloader.parentNode) {
+            preloader.remove();
+          }
+        }, 650);
+      }
+    }, 3200);
   }
 
   /**

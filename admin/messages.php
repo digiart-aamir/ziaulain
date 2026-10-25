@@ -1,7 +1,7 @@
 <?php
 /**
  * Zero-DB Contact Messages Manager
- * Sidra Zia Portfolio Portal
+ * Zia Ul Ain Portfolio Portal
  */
 
 require_once dirname(__DIR__) . '/includes/config.php';
@@ -30,7 +30,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && isset($_POST['action'])) {
             'name' => 'Demo Client',
             'email' => 'client@example.com',
             'subject' => 'Web Development & Machine Learning Project Inquiry',
-            'message' => 'Hello Sidra, I reviewed your impressive portfolio and would like to consult with you on an upcoming web and data science project.',
+            'message' => 'Hello Zia Ul Ain, I reviewed your impressive portfolio and would like to consult with you on an upcoming web and data science project.',
             'ip' => $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1',
             'created_at' => date('Y-m-d H:i:s')
         ];
